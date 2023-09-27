@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate } from 'react-router-dom';
 import "../App.css";
 
 function LogInForm() {
@@ -8,7 +8,7 @@ function LogInForm() {
     const [lastname, setLastName] = useState('');
     const [error, setError] = useState('');
 
-    const navigate = useNavigate(); // Get the navigate function from React Router
+    const navigate = useNavigate();
 
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
@@ -20,21 +20,20 @@ function LogInForm() {
 
     const inputevent = (event) => {
         event.preventDefault();
-      
+
         const trimmedFirstName = firstname.trim().toLowerCase();
         const trimmedSecondName = secondname.trim().toLowerCase();
-      
+
         if (trimmedFirstName === '' || trimmedSecondName === '') {
-          setError('Please enter valid names in both fields');
+            setError('Please enter valid names in both fields');
         } else if (trimmedFirstName.length <= 3 || trimmedSecondName.length <= 3) {
-          setError('Names should be more than 3 characters');
+            setError('Names should be more than 3 characters');
         } else if (trimmedFirstName !== trimmedSecondName) {
-          setError('Names should be the same');
+            setError('Names should be the same');
         } else {
-          // Pass firstname and secondname as props when navigating to the Welcome component
-          navigate('/welcome', { state: { firstname, secondname } });
+            navigate('/welcome', { state: { firstname, secondname } });
         }
-      };
+    };
 
     return (
         <div className="login-form-container">
