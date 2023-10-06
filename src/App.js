@@ -72,12 +72,16 @@
 // export {FetchApi};
 
 import React from "react";
-import FormDataInConsole from "./component/FormDataInConsole";
+// import FormDataInConsole from "./component/FormDataInConsole";
+import AlertOnClick from './component/AlertOnClick';
+import VoiceCapture from "./component/VoiceCapture";
 function App(){
   return(
     <>
     {/* <Search/> */}
-    <FormDataInConsole/>
+    {/* <FormDataInConsole/> */}
+     {/* <AlertOnClick/> */}
+     <VoiceCapture/>
     </>
   )
 }

@@ -14,6 +14,7 @@ function Search(){
             
         </div>
         {text === "" ?null : <Sresult name={text}/>}
+        
         </>
     )
 }
